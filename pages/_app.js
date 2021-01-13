@@ -15,6 +15,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 10px 0;
   }
 
+  p {
+      margin: 10px 0;
+  }
+
   a {
     font-size: 14px;
     text-decoration: none;
@@ -28,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   li {
-      margin: 5px 0;
+      margin: 5px 20px;
       letter-spacing: 1px;
   }
 `;
