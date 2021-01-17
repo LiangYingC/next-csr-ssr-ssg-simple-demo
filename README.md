@@ -24,5 +24,5 @@ _p.s. 如果採用 `npm run dev` 是無法觀察出 SSR / SSG 的差異，需要
 ## 參考文件
 
 - [Next 官方文件：Next.js CLI](https://nextjs.org/docs/api-reference/cli)
-- [Next 官方文件：Pages]([https://nextjs.org/docs/basic-features/pages])
+- [Next 官方文件：Pages](https://nextjs.org/docs/basic-features/pages)
 - [Next 官方文件：Data Fetching](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation)
