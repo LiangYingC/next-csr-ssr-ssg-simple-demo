@@ -15,11 +15,15 @@
 - `npm run build` => `next build` : creates **an optimized production build** of your application. The output displays information about each route.
 - `npm run start` => `next start` : starts the application in **production mode**. The application should be compiled with `next build` first. The application will start at http://localhost:3000 by default.
 
-_p.s. 如果採用 `npm run dev` 是無法觀察出 SSR / SSG 的差異，需要使用 `npm run start` 才能觀察出差異。_
+_p.s. 如果採用 `npm run dev` 是無法觀察出 SSR / SSG 的差異，需要使用 `npm run start` 才能觀察出差異。`npm run start` 前，記得要先 `npm run build`。_
 
 ## 畫面結果
 
 ![](https://i.imgur.com/RRjGX0z.png)
+
+![](https://imgur.com/BCLzOWI.png)
+
+![](https://imgur.com/u5rzPOW.png)
 
 ## 參考文件
 
