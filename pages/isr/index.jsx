@@ -16,11 +16,11 @@ const ISR = ({ animeQuotation }) => {
       <li>特點三：user 可以很快速的一次看到完整畫面。</li>
       <ul>
         <p>以下為同支 API 回傳的資料，可以觀察與 CSR/SSR/SSG/ISR 的差異：</p>
-        <li>詩句: {animeQuotationSentence}</li>
+        <li>名句: {animeQuotationSentence}</li>
         <li>出處： {animeQuotationFrom}</li>
-        <li>詩句: {animeQuotationSentence}</li>
+        <li>名句: {animeQuotationSentence}</li>
         <li>出處： {animeQuotationFrom}</li>
-        <li>詩句: {animeQuotationSentence}</li>
+        <li>名句: {animeQuotationSentence}</li>
         <li>出處： {animeQuotationFrom}</li>
       </ul>
     </Layout>
