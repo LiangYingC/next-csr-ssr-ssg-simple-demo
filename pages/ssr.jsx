@@ -29,9 +29,7 @@ const SSR = ({ animeQuotation }) => {
 };
 
 export async function getServerSideProps(context) {
-  const res = await fetch(
-    `${process.env.API_HOST_DOMAIN}/api/animeQuotationData/random`
-  );
+  const res = await fetch(`http://poetry.apiopen.top/sentences`);
 
   const animeQuotation = await res.json();
 

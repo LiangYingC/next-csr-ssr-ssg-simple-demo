@@ -28,9 +28,7 @@ const SSG = ({ animeQuotation }) => {
 };
 
 export async function getStaticProps(context) {
-  const res = await fetch(
-    `https://next-csr-ssr-ssg-isr-demo.vercel.app/api/animeQuotationData/random`
-  );
+  const res = await fetch(`http://poetry.apiopen.top/sentences`);
 
   const animeQuotation = await res.json();
 
