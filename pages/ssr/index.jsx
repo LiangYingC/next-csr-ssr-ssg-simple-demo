@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 
 const SSR = ({ animeQuotation }) => {
   const animeQuotationSentence = animeQuotation.result.sentence;
@@ -6,7 +6,7 @@ const SSR = ({ animeQuotation }) => {
 
   return (
     <Layout>
-      <h3>Server Side Render</h3>
+      <h3>Server Side Render (SSR)</h3>
       <h4>
         當 user 進到頁面時，畫面會在 Server 端製作，製作過程中也會打 API
         獲取最新資料。當畫面與資料製作完成，並傳回 Client 後才會
@@ -29,7 +29,9 @@ const SSR = ({ animeQuotation }) => {
 };
 
 export async function getServerSideProps(context) {
-  const res = await fetch(`http://poetry.apiopen.top/sentences`);
+  const res = await fetch(
+    `${process.env.API_HOST_DOMAIN}/api/animeQuotationData/random`
+  );
 
   const animeQuotation = await res.json();
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 
 const CSR = () => {
   const [animeQuotation, setAnimeQuotation] = useState({
@@ -25,7 +25,7 @@ const CSR = () => {
 
   return (
     <Layout>
-      <h3>Client Side Render(CSR)</h3>
+      <h3>Client Side Render (CSR)</h3>
       <h4>
         當每次 user 進到頁面時，畫面開始在 Client 端製作並 render，API
         資料也是在 Client 才獲取（可以看到 Loading
