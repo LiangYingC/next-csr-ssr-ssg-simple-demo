@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 
 const ISR = ({ animeQuotation }) => {
   const animeQuotationSentence = animeQuotation.result.sentence;
@@ -27,13 +27,20 @@ const ISR = ({ animeQuotation }) => {
   );
 };
 
+// This function gets called at build time
 export async function getStaticProps(context) {
-  const res = await fetch(`http://poetry.apiopen.top/sentences`);
+  const res = await fetch(
+    `https://next-csr-ssr-ssg-isr-demo.vercel.app/api/animeQuotationData/random`
+  );
 
   const animeQuotation = await res.json();
 
   return {
     props: { animeQuotation },
+    // 【 revalidate: 10 】
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
     revalidate: 10,
   };
 }
