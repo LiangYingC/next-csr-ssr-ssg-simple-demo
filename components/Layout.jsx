@@ -27,7 +27,13 @@ const Layout = ({ children, router }) => {
       </Header>
       <Content>{children}</Content>
       <Footer>
-        <FooterItem>API 貢獻來源：https://api.apiopen.top/api.html</FooterItem>
+        <FooterItem
+          href="https://github.com/LiangYingC/Next-CSR-SSR-SSG-Simple-Demo"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Next-CSR-SSR-SSG-Simple-Demo Github Repo
+        </FooterItem>
       </Footer>
     </Wrapper>
   );
@@ -77,8 +83,21 @@ const Footer = styled.footer`
   padding: 20px 10px;
 `;
 
-const FooterItem = styled.div`
-  font-size: 12px;
+const FooterItem = styled.a`
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  font-size: 15px;
+  color: #555;
+
+  box-shadow: inset 0 -6px 0 0 rgb(0, 0, 0, 0.1);
+  transition: 0.25s;
+
+  :hover {
+    box-shadow: inset 0 -2px 0 0 rgb(0, 0, 0, 0.1);
+  }
 `;
 
 export default withRouter(Layout);
