@@ -1,6 +1,9 @@
 import Layout from "../components/Layout";
 
-const SSG = ({ poetryData }) => {
+const SSG = ({ animeQuotation }) => {
+  const animeQuotationSentence = animeQuotation.result.sentence;
+  const animeQuotationFrom = animeQuotation.result.from;
+
   return (
     <Layout>
       <h3>Static Site Generate</h3>
@@ -12,24 +15,25 @@ const SSG = ({ poetryData }) => {
       <li>特點二：不會在 runtime 更新資料。</li>
       <li>特點三：user 可以很快速的一次看到完整畫面。</li>
       <ul>
-        <p>以下為同支 API 回傳的資料，可以觀察與 CSR/SSR 的差異：</p>
-        <li>詩句: {poetryData.result.name}</li>
-        <li>出處： {poetryData.result.from}</li>
-        <li>詩句: {poetryData.result.name}</li>
-        <li>出處： {poetryData.result.from}</li>
-        <li>詩句: {poetryData.result.name}</li>
-        <li>出處： {poetryData.result.from}</li>
+        <p>以下為同支 API 回傳的資料，可以觀察與 CSR/SSR/SSG/ISR 的差異：</p>
+        <li>詩句: {animeQuotationSentence}</li>
+        <li>出處： {animeQuotationFrom}</li>
+        <li>詩句: {animeQuotationSentence}</li>
+        <li>出處： {animeQuotationFrom}</li>
+        <li>詩句: {animeQuotationSentence}</li>
+        <li>出處： {animeQuotationFrom}</li>
       </ul>
     </Layout>
   );
 };
 
 export async function getStaticProps(context) {
-  const res = await fetch("http://poetry.apiopen.top/sentences");
-  const poetryData = await res.json();
+  const res = await fetch(`http://poetry.apiopen.top/sentences`);
+
+  const animeQuotation = await res.json();
 
   return {
-    props: { poetryData },
+    props: { animeQuotation },
   };
 }
 

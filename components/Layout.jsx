@@ -16,10 +16,13 @@ const Layout = ({ children, router }) => {
           <NavItem isActive={router.pathname === "/ssg"}>
             <Link href="/ssg">SSG Demo</Link>
           </NavItem>
+          <NavItem isActive={router.pathname === "/isr"}>
+            <Link href="/isr">ISR Demo</Link>
+          </NavItem>
         </NavList>
         <Description>
-          可點擊各個按鈕，觀察 CSR / SSR / SSG render 的差異，也可 reload page
-          試試效果。
+          可點擊各個按鈕，觀察 CSR / SSR / SSG / ISR render 的差異，也可 reload
+          page 試試效果。
         </Description>
       </Header>
       <Content>{children}</Content>
