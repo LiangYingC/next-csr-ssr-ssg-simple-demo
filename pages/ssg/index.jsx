@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 
 const SSG = ({ animeQuotation }) => {
   const animeQuotationSentence = animeQuotation.result.sentence;
@@ -6,7 +6,7 @@ const SSG = ({ animeQuotation }) => {
 
   return (
     <Layout>
-      <h3>Static Site Generate</h3>
+      <h3>Static Site Generate (SSG)</h3>
       <h4>
         當每次 user 進到頁面時，取得已經在 build time 製作好的靜態檔案並
         render，因此畫面一次到位，且資料不會在 runtime 更新。
@@ -27,8 +27,11 @@ const SSG = ({ animeQuotation }) => {
   );
 };
 
+// This function gets called at build time
 export async function getStaticProps(context) {
-  const res = await fetch(`http://poetry.apiopen.top/sentences`);
+  const res = await fetch(
+    `https://next-csr-ssr-ssg-isr-demo.vercel.app/api/animeQuotationData/random`
+  );
 
   const animeQuotation = await res.json();
 
